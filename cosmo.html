@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COSMO — Minder zoeken, beter beslissen | Flowbright</title>
+  <meta name="description" content="COSMO is de Organized Second Mind Operator van Flowbright: een kennisbank die zichzelf bijhoudt, zodat uw mensen beslissen met de juiste context in plaats van te zoeken.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Gloock&family=Instrument+Sans:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0A0908">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cosmo.css">
+</head>
+<body class="pagina-cosmo">
+
+<canvas id="sterrenveld" aria-hidden="true"></canvas>
+
+<header class="site-header transparant">
+  <nav class="nav">
+    <a class="wordmark" href="index.html"><span class="flow">Flow</span><span class="bright">Bright</span><span class="dot">.</span></a>
+    <button class="menu-knop" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="werkwijze.html">Werkwijze</a></li>
+      <li><a href="over.html">Over</a></li>
+      <li><a href="cosmo.html" class="nav-cosmo actief"><span class="ster"></span>COSMO</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="cosmo-hero hero">
+  <div class="logo-vak"><canvas id="logo-canvas" aria-label="COSMO logo: van chaos naar cosmos" title="klik om over te slaan"></canvas></div>
+  <div class="inhoud">
+    <div class="cosmo-tagline" id="tagline">From chaos to cosmos</div>
+    <h1 id="hero-titel">Minder zoeken, beter beslissen.</h1>
+    <div class="onder" id="hero-onder">
+      <p>COSMO zet de kennis van uw organisatie op één plek en houdt die zelf actueel. Uw mensen besteden hun tijd aan keuzes maken, niet aan informatie zoeken om keuzes te kunnen maken.</p>
+      <div class="knoppen">
+        <a class="knop knop-primair" href="contact.html?onderwerp=cosmo">Vraag een demo aan <span class="pijl">→</span></a>
+        <a class="knop knop-secundair" href="#hoe">Hoe het werkt</a>
+      </div>
+      <div class="endorsed">Een product van <a href="index.html">Flowbright</a></div>
+    </div>
+  </div>
+  <button class="opnieuw" id="opnieuw" type="button">↻ Opnieuw afspelen</button>
+</div>
+
+<section>
+  <div class="container">
+    <div class="sectie-kop">
+      <span class="label" data-reveal>Het probleem</span>
+      <h2 data-reveal style="--d:1">Niet het gebrek aan informatie is het probleem. Het zoeken ernaar.</h2>
+      <p class="intro" data-reveal style="--d:2">In een groeiend technisch bedrijf is de kennis er wel. Hij zit alleen in hoofden, mailboxen, Teams-gesprekken en losse bestanden. Elke beslissing begint daardoor met zoeken, navragen en reconstrueren. Dat kost tijd, en het kost vooral goede keuzes.</p>
+    </div>
+    <div class="cosmo-kaarten" id="probleem-kaarten">
+      <div class="cosmo-kaart">
+        <span class="nummer">01 · Kennis</span>
+        <h3>Kennis zit in hoofden en mailboxen</h3>
+        <p>Wat is er afgesproken met die leverancier? Waarom is die machine zo ontworpen? Het antwoord bestaat, maar niemand vindt het op het moment dat het nodig is.</p>
+      </div>
+      <div class="cosmo-kaart">
+        <span class="nummer">02 · Beslissingen</span>
+        <h3>Beslissingen wachten op context</h3>
+        <p>Een keuze die in een uur gemaakt kan worden, blijft dagen liggen omdat de context ontbreekt. En als hij dan valt, valt hij op een half beeld.</p>
+      </div>
+      <div class="cosmo-kaart">
+        <span class="nummer">03 · Tijd</span>
+        <h3>Administratie eet de tijd op</h3>
+        <p>Notuleren, bijwerken, overtypen, navragen. Werk dat niemand energie geeft en dat de organisatie wegtrekt van waar het om gaat: sturen en beslissen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="sectie-kop" style="text-align:center; margin-left:auto; margin-right:auto">
+      <span class="label" data-reveal>Wat COSMO is</span>
+      <h2 data-reveal style="--d:1">Een tweede brein voor uw organisatie</h2>
+      <p class="intro" data-reveal style="--d:2; margin:0 auto">Een kennisbank als fundament, met een AI-laag die hem zelf ordent, verbindt en bijhoudt. Niet een chatbot die alles opnieuw bedenkt, maar een georganiseerd geheugen dat elke dag slimmer wordt. Klik op de letters.</p>
+    </div>
+    <div class="acroniem" data-reveal>
+      <button class="letter" type="button" data-k="0">C</button>
+      <button class="letter" type="button" data-k="1">O</button>
+      <button class="letter" type="button" data-k="2">S</button>
+      <button class="letter" type="button" data-k="3">M</button>
+      <button class="letter terracotta" type="button" data-k="4">O</button>
+    </div>
+    <div class="acroniem-uitleg" data-reveal>
+      <div class="woord" id="acro-woord"><em>C</em>ompany's</div>
+      <p id="acro-tekst">Het geheugen van úw organisatie, met uw processen, uw mensen en uw afspraken. In de persoonlijke editie staat de C voor de eigenaar zelf.</p>
+    </div>
+    <div class="acroniem-zin" data-reveal>Organized Second Mind Operator</div>
+  </div>
+</section>
+
+<section id="hoe">
+  <div class="container">
+    <div class="sectie-kop">
+      <span class="label" data-reveal>Hoe het werkt</span>
+      <h2 data-reveal style="--d:1">Van zoeken naar beslissen</h2>
+      <p class="intro" data-reveal style="--d:2">Informatie stroomt vanzelf binnen, wordt geordend en komt terug op het moment dat er een keuze gemaakt moet worden. Klik op een ster in de kaart.</p>
+    </div>
+    <div class="sterrenkaart" data-reveal>
+      <div class="kaart-canvas">
+        <canvas id="graaf"></canvas>
+        <span class="kaart-hint">Klik op een ster · de stroom loopt van bron naar keuze</span>
+      </div>
+      <div class="kaart-paneel">
+        <span class="label" id="paneel-label">Stap 1</span>
+        <h3 id="paneel-titel">Bronnen</h3>
+        <p id="paneel-tekst">E-mail, Teams, SharePoint, documenten, gesprekken en systemen. COSMO sluit aan op wat er al is, zonder dat mensen anders hoeven te werken.</p>
+        <div class="stap-dots" id="paneel-dots"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="sectie-kop">
+      <span class="label" data-reveal>Wat het oplevert</span>
+      <h2 data-reveal style="--d:1">Zet uw mensen in op de juiste dingen</h2>
+      <p class="intro" data-reveal style="--d:2">Stuur ze op pad met de juiste informatie, en laat ze keuzes maken in plaats van zoeken naar informatie om keuzes te maken.</p>
+      <div class="schakel" id="schakel" data-reveal style="--d:3" role="switch" aria-checked="false" tabindex="0">
+        <span class="kant zonder">Zonder COSMO</span>
+        <span class="knopje"></span>
+        <span class="kant met">Met COSMO</span>
+      </div>
+    </div>
+    <div class="vergelijk" id="vergelijk" data-reveal>
+      <div class="vergelijk-rij"><span class="thema">Een beslissing</span><div class="tekst"><span class="zonder">Begint met zoeken, navragen en reconstrueren. Valt dagen later, op een half beeld.</span><span class="met">Begint met de context die er al ligt. Valt vandaag, op het hele beeld.</span></div></div>
+      <div class="vergelijk-rij"><span class="thema">Een nieuwe collega</span><div class="tekst"><span class="zonder">Leert het bedrijf kennen via rondvragen en toeval. Duurt maanden.</span><span class="met">Vraagt COSMO hoe het hier werkt en waarom. Is in weken productief.</span></div></div>
+      <div class="vergelijk-rij"><span class="thema">Een overleg</span><div class="tekst"><span class="zonder">Gaat over wat er ook alweer besloten was. Notulen verdwijnen in een map.</span><span class="met">Gaat over de keuze van vandaag. Besluiten landen vanzelf in het geheugen.</span></div></div>
+      <div class="vergelijk-rij"><span class="thema">Kennis bij vertrek</span><div class="tekst"><span class="zonder">Loopt de deur uit met de persoon. Wat overblijft is een mailbox.</span><span class="met">Blijft. Geordend, vindbaar en gekoppeld aan processen en besluiten.</span></div></div>
+      <div class="vergelijk-rij"><span class="thema">De AI-laag</span><div class="tekst"><span class="zonder">Een losse chatbot die elke vraag vanaf nul beantwoordt, zonder uw context.</span><span class="met">Ordent, verbindt en leert elke dag bij. Wordt slimmer naarmate het bedrijf hem gebruikt.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="sectie-kop">
+      <span class="label" data-reveal>Twee edities</span>
+      <h2 data-reveal style="--d:1">Eén naam, twee werelden</h2>
+      <p class="intro" data-reveal style="--d:2">Dezelfde motor, hetzelfde idee van orde. De C beweegt mee met wie de eigenaar is.</p>
+    </div>
+    <div class="edities">
+      <div class="editie personal" data-reveal>
+        <div class="orbit"></div>
+        <span class="c">Coen's · Personal</span>
+        <h3>COSMO Personal</h3>
+        <span class="tagline">Your second mind, organized</span>
+        <p>Een tweede brein voor één persoon. Notities, besluiten, mensen en projecten in één geordend geheugen dat met u meegroeit, los van welk AI-model u gebruikt.</p>
+      </div>
+      <div class="editie business" data-reveal style="--d:1">
+        <div class="orbit"></div>
+        <span class="c">Company's · Business</span>
+        <h3>COSMO Business</h3>
+        <span class="tagline">One organized mind for everyone</span>
+        <p>Het geheugen van de organisatie. Processen, afspraken, besluiten en context per afdeling, gevoed vanuit Microsoft 365 en de systemen die u al heeft. Eén geordend beeld voor iedereen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="sectie-kop">
+      <span class="label" data-reveal>Vertrouwen</span>
+      <h2 data-reveal style="--d:1">Uw kennis blijft van u</h2>
+    </div>
+    <div class="pijlers">
+      <div class="pijler" data-reveal>
+        <div class="icoon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <h3>In uw eigen omgeving</h3>
+        <p>De kennisbank staat in uw eigen Microsoft 365 of opslag. Geen externe database waar uw bedrijfskennis in verdwijnt.</p>
+      </div>
+      <div class="pijler" data-reveal style="--d:1">
+        <div class="icoon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+        <h3>Open formaat</h3>
+        <p>Alles is leesbare tekst in een logische structuur. Geen vendor lock-in: wisselt u van AI-leverancier, dan gaat het geheugen gewoon mee.</p>
+      </div>
+      <div class="pijler" data-reveal style="--d:2">
+        <div class="icoon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
+        <h3>De mens beslist</h3>
+        <p>COSMO brengt de context. De keuze blijft bij uw mensen. Dat is het hele punt: beter beslissen, niet laten beslissen.</p>
+      </div>
+      <div class="pijler" data-reveal style="--d:3">
+        <div class="icoon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg></div>
+        <h3>Wordt elke dag beter</h3>
+        <p>Een vast ritme van instroom, ordening en controle. De AI-laag onderhoudt zichzelf, zodat de kennisbank niet veroudert maar groeit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="sectie-kop">
+      <div class="status-badge" data-reveal>In ontwikkeling · pilotpartners gezocht</div>
+      <span class="label" data-reveal style="--d:1; display:flex">Hoe u COSMO krijgt</span>
+      <h2 data-reveal style="--d:2">Geen los abonnement, maar een gedragen oplossing</h2>
+      <p class="intro" data-reveal style="--d:3">COSMO wordt ingericht als onderdeel van een Flowbright-traject. Eerst de processen, dan het geheugen. Zo past hij bij hoe úw organisatie werkt, en wordt hij gedragen door de mensen die hem gebruiken.</p>
+    </div>
+    <div class="route">
+      <div class="route-stap" data-reveal>
+        <h3>Kennismaking en demo</h3>
+        <p>We kijken samen waar informatie weglekt en welke beslissingen nu op context wachten. U ziet COSMO werken met voorbeelddata.</p>
+      </div>
+      <div class="route-stap" data-reveal style="--d:1">
+        <h3>Inrichten per afdeling</h3>
+        <p>We bouwen het geheugen op rond uw processen, mensen en bronnen. Klein beginnen, bij de afdeling waar de winst het grootst is.</p>
+      </div>
+      <div class="route-stap" data-reveal style="--d:2">
+        <h3>Ritme en overdracht</h3>
+        <p>Een vast ritme van instroom en controle, en een eigenaar binnen uw organisatie. Daarna draait COSMO door, ook zonder Flowbright.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cosmo-afsluiter">
+  <div class="container">
+    <span class="label" data-reveal>From chaos to cosmos</span>
+    <h2 data-reveal style="--d:1">Benieuwd hoe COSMO uw beslissingen versnelt?</h2>
+    <p data-reveal style="--d:2">Vraag een demo aan. Dan laten we zien hoe het werkt, met voorbeelddata en in uw eigen taal.</p>
+    <div class="knoppen" data-reveal style="--d:3">
+      <a class="knop knop-primair" href="contact.html?onderwerp=cosmo">Vraag een demo aan <span class="pijl">→</span></a>
+      <a class="knop knop-secundair" href="werkwijze.html">Bekijk de werkwijze van Flowbright</a>
+    </div>
+  </div>
+</div>
+
+<footer class="op-donker">
+  <div class="container">
+    <div>
+      <a class="wordmark" href="index.html"><span class="flow">Flow</span><span class="bright">Bright</span><span class="dot">.</span></a>
+      <span class="tagline">Bringing the (b)right people together.</span>
+    </div>
+    <div>
+      <h4>Navigatie</h4>
+      <ul><li><a href="werkwijze.html">Werkwijze</a></li><li><a href="over.html">Over Flowbright</a></li><li><a href="cosmo.html">COSMO</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul><li><a href="mailto:info@flowbright.nl">info@flowbright.nl</a></li><li>Regio Noord-Holland, heel Nederland</li></ul>
+    </div>
+    <div class="onder"><span>Flowbright · proces- en projectbegeleiding · flowbright.nl</span><span>COSMO is een product van Flowbright</span></div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script src="cosmo.js"></script>
+</body>
+</html>

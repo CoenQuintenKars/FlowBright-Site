@@ -4,117 +4,158 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Werkwijze — Flowbright</title>
-  <meta name="description" content="De werkwijze van Flowbright: closing the loop. Van probleemanalyse tot een oplossing die de hele organisatie draagt.">
+  <meta name="description" content="De werkwijze van Flowbright in vijf stappen: van herkenning tot het nieuwe normaal. Eerst begrijpen hoe het werk stroomt, dan pas bouwen.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700&family=Work+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Gloock&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#14283C">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
+<header class="site-header transparant">
   <nav class="nav">
-    <a class="wordmark" href="index.html"><span class="flow">Flow</span>Bright<span class="dot">.</span></a>
-    <ul>
+    <a class="wordmark" href="index.html"><span class="flow">Flow</span><span class="bright">Bright</span><span class="dot">.</span></a>
+    <button class="menu-knop" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="werkwijze.html" class="actief">Werkwijze</a></li>
       <li><a href="over.html">Over</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cosmo.html" class="nav-cosmo"><span class="ster"></span>COSMO</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-<div class="hero">
+<div class="hero hero-klein">
+  <canvas id="stroomveld" aria-hidden="true"></canvas>
   <div class="container">
-    <span class="label">Werkwijze · Closing the loop</span>
-    <h1>De loop sluiten waar informatie en waarde <span class="licht">weglekken</span></h1>
-    <p>De reflex is vaak een nieuw systeem of een nieuwe tool. Die lost het zelden op. Flowbright pakt het anders aan: eerst begrijpen hoe het werk stroomt, dan pas bouwen. In vijf stappen, van herkenning tot het nieuwe normaal.</p>
+    <span class="label verschijn">Werkwijze · Closing the loop</span>
+    <h1 class="woorden">De loop sluiten waar informatie en waarde <span class="licht">weglekken</span></h1>
+    <p class="verschijn">De reflex is vaak een nieuw systeem of een nieuwe tool. Die lost het zelden op. Flowbright pakt het anders aan: eerst begrijpen hoe het werk stroomt, dan pas bouwen. In vijf stappen, van herkenning tot het nieuwe normaal.</p>
   </div>
 </div>
 
 <section>
-  <div class="container narrow">
+  <div class="container">
+    <div class="tijdlijn">
+      <div class="tijdlijn-lijn"></div>
 
-    <div class="stap">
-      <span class="cijfer">1</span>
-      <div>
+      <div class="stap" data-reveal>
+        <div class="cijfer">1</div>
+        <span class="wie">Waar het begint</span>
         <h3>Het knelt</h3>
         <p>Een technisch bedrijf, ooit korte lijnen. De groei ging sneller dan de werkwijze. Orders vertragen, afdelingen wijzen naar elkaar, kennis zit in hoofden en losse bestanden. En sluipend: goede mensen verliezen energie. Dit is het startpunt van vrijwel elke samenwerking.</p>
       </div>
-    </div>
 
-    <div class="stap">
-      <span class="cijfer">2</span>
-      <div>
+      <div class="stap" data-reveal>
+        <div class="cijfer">2</div>
+        <span class="wie">Het inzicht</span>
         <h3>De herkenning</h3>
         <p>Het ligt niet aan de mensen. Het ligt aan hoe het werk stroomt. Maar waar begin je? Het zijn meerdere problemen over meerdere afdelingen, en niemand heeft het hele plaatje. Precies daarom werkt symptoombestrijding per afdeling niet.</p>
       </div>
-    </div>
 
-    <div class="stap">
-      <span class="cijfer">3</span>
-      <div>
+      <div class="stap" data-reveal>
+        <div class="cijfer">3</div>
+        <span class="wie">Flowbright stapt in</span>
         <h3>Luisteren en in kaart brengen</h3>
         <p>Flowbright begint met luisteren: op de werkvloer, bij engineering, in het magazijn en aan de directietafel. Waar breekt de flow? Waar verdwijnt informatie? Wie zijn betrokken, ook degenen die nog niet gehoord zijn? De kluwen wordt vertaald naar één helder beeld dat voor iedereen klopt.</p>
       </div>
-    </div>
 
-    <div class="stap">
-      <span class="cijfer">4</span>
-      <div>
+      <div class="stap" data-reveal>
+        <div class="cijfer">4</div>
+        <span class="wie">Samen bouwen</span>
         <h3>De ommekeer</h3>
         <p>De juiste mensen aan tafel met de juiste informatie; iedereen kijkt naar hetzelfde plaatje. Het wordt een project met doel, planning en einde. Geen rapport in een la, maar samen bouwen, waar zinvol met slimme tooling en AI. Succes is mensen plus processen plus technologie.</p>
       </div>
-    </div>
 
-    <div class="stap">
-      <span class="cijfer">5</span>
-      <div>
+      <div class="stap" data-reveal>
+        <div class="cijfer">5</div>
+        <span class="wie">Het licht gaat aan</span>
         <h3>Het nieuwe normaal</h3>
         <p>Het werk stroomt. Informatie komt aan. Afdelingen halen energie uit samenwerken. En het blijft, óók zonder Flowbright, want de oplossing is samen gemaakt en wordt gedragen. Eerst kwam de flow terug. Toen ging het licht aan.</p>
+        <div class="stap-cosmo">
+          <span class="cosmo-merk-klein"><svg xmlns="http://www.w3.org/2000/svg" viewBox="22 22 160 160" aria-label="COSMO beeldmerk"><path d="M134.74 56.26 L95.5 40 L56.26 56.26 L40 95.5 L56.26 134.74 L95.5 151 L134.74 134.74" stroke="#F3EFE6" stroke-width="1.11" stroke-dasharray="3.61 4.44" fill="none" stroke-linecap="round"/><circle cx="134.74" cy="56.26" r="8.88" fill="#B9492C"/><circle cx="95.5" cy="40" r="6.11" fill="#F3EFE6"/><circle cx="56.26" cy="56.26" r="12.21" fill="#C9A24B"/><circle cx="40" cy="95.5" r="7.21" fill="#F3EFE6"/><circle cx="56.26" cy="134.74" r="10.54" fill="#B9492C"/><circle cx="95.5" cy="151" r="5.55" fill="#F3EFE6"/><circle cx="134.74" cy="134.74" r="8.32" fill="#C9A24B"/><path d="M160.99 87.73l2.87 4.9 4.9 2.87-4.9 2.87-2.87 4.9-2.87-4.9-4.9-2.87 4.9-2.87z" fill="#F3EFE6"/></svg></span>
+          <p>De kennis die in het project is opgebouwd, blijft daarna stromen. COSMO houdt hem bij, zodat uw mensen beslissen met de juiste context in plaats van te zoeken.</p>
+          <a href="cosmo.html">Meer over COSMO →</a>
+        </div>
       </div>
     </div>
-
   </div>
 </section>
 
 <div class="kernbelofte">
   <div class="container">
-    <blockquote>"Van kluwen naar één beeld. Van beeld naar gedragen oplossing."</blockquote>
-    <p class="bron">De werkwijze in twee zinnen</p>
+    <blockquote data-reveal>"Van kluwen naar één beeld. Van beeld naar gedragen oplossing."</blockquote>
+    <p class="bron" data-reveal style="--d:1">De werkwijze in twee zinnen</p>
   </div>
+  <div class="stroomlijn"></div>
 </div>
 
 <section>
-  <div class="container twee-kolommen">
-    <div>
-      <span class="label">Uitgangspunten</span>
-      <h2>Wat u wél en niet van Flowbright krijgt</h2>
+  <div class="container">
+    <div class="sectie-kop">
+      <span class="label" data-reveal>Uitgangspunten</span>
+      <h2 data-reveal style="--d:1">Wat u wél en niet van Flowbright krijgt</h2>
     </div>
-    <div>
-      <p><strong>Wél:</strong> een gestructureerde probleemanalyse over afdelingen heen, de vertaalslag van werkvloer naar directietafel en terug, projectbegeleiding met doel, planning en einde, en een oplossing die uw eigen mensen mede bouwen en dus dragen.</p>
-      <p><strong>Niet:</strong> een standaardpakket, een dik rapport zonder vervolg, of technologie als doel op zich. AI en slimme tooling worden ingezet waar ze waarde toevoegen, nooit als de belofte zelf.</p>
+    <div class="wel-niet">
+      <div class="kaart" data-reveal>
+        <span class="nummer">Wél</span>
+        <h3>Dit mag u verwachten</h3>
+        <ul>
+          <li>Een gestructureerde probleemanalyse over afdelingen heen</li>
+          <li>De vertaalslag van werkvloer naar directietafel en terug</li>
+          <li>Projectbegeleiding met doel, planning en einde</li>
+          <li>Een oplossing die uw eigen mensen mede bouwen en dus dragen</li>
+          <li>Slimme tooling en AI waar het echt waarde toevoegt</li>
+        </ul>
+      </div>
+      <div class="kaart niet" data-reveal style="--d:1">
+        <span class="nummer">Niet</span>
+        <h3>Dit krijgt u niet</h3>
+        <ul>
+          <li>Een standaardpakket dat op elk bedrijf past</li>
+          <li>Een dik rapport zonder vervolg</li>
+          <li>Technologie als doel op zich</li>
+          <li>Een consultant die het alleen doet en daarna vertrekt</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
 <div class="afsluiter">
   <div class="container">
-    <h2>Weten waar uw flow breekt?</h2>
-    <p>Een eerste gesprek maakt vaak al zichtbaar waar informatie weglekt en waar de grootste winst zit.</p>
-    <div class="knoppen">
-      <a class="knop knop-primair" href="contact.html">Plan een kennismaking</a>
+    <h2 data-reveal>Weten waar uw flow breekt?</h2>
+    <p data-reveal style="--d:1">Een eerste gesprek maakt vaak al zichtbaar waar informatie weglekt en waar de grootste winst zit.</p>
+    <div class="knoppen" data-reveal style="--d:2">
+      <a class="knop knop-primair" href="contact.html">Plan een kennismaking <span class="pijl">→</span></a>
     </div>
   </div>
 </div>
 
-<footer>
+<footer class="op-donker">
   <div class="container">
-    <a class="wordmark" href="index.html"><span class="flow">Flow</span>Bright<span class="dot">.</span></a>
-    <span class="tagline">Bringing the (b)right people together.</span>
-    <span>Flowbright · proces- en projectbegeleiding · <a href="contact.html">flowbright.nl</a></span>
+    <div>
+      <a class="wordmark" href="index.html"><span class="flow">Flow</span><span class="bright">Bright</span><span class="dot">.</span></a>
+      <span class="tagline">Bringing the (b)right people together.</span>
+    </div>
+    <div>
+      <h4>Navigatie</h4>
+      <ul><li><a href="werkwijze.html">Werkwijze</a></li><li><a href="over.html">Over Flowbright</a></li><li><a href="cosmo.html">COSMO</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul><li><a href="mailto:info@flowbright.nl">info@flowbright.nl</a></li><li>Regio Noord-Holland, heel Nederland</li></ul>
+    </div>
+    <div class="onder"><span>Flowbright · proces- en projectbegeleiding · flowbright.nl</span><span>COSMO is een product van Flowbright</span></div>
   </div>
 </footer>
 
+<script src="main.js"></script>
 </body>
 </html>

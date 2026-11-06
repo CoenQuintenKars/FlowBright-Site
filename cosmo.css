@@ -1,0 +1,268 @@
+/* ============================================================
+   COSMO — productpagina (eigen merkstijl binnen Flowbright)
+   Klassiek palet: inkt, terracotta, oker, marmer. Woordmerk Gloock.
+   Wordt geladen ná style.css en overschrijft alleen op deze pagina.
+   ============================================================ */
+
+:root {
+  --inkt:       #0A0908;
+  --inkt-2:     #15130F;
+  --inkt-licht: #221F19;
+  --terracotta: #B9492C;
+  --oker:       #C9A24B;
+  --marmer:     #F3EFE6;
+  --marmer-dim: rgba(243, 239, 230, .72);
+  --cosmo-lijn: rgba(243, 239, 230, .12);
+  --font-cosmo: 'Gloock', Georgia, 'Times New Roman', serif;
+  --font-cosmo-tekst: 'Instrument Sans', 'Work Sans', Arial, sans-serif;
+  --font-cosmo-mono: 'Geist Mono', 'IBM Plex Mono', Consolas, monospace;
+  /* Personal */
+  --midnight: #0E1230; --orbit: #3B6CFF; --stardust: #8FA0FF; --paper: #F6F4EE;
+  /* Business */
+  --deepsea: #062A30; --flowteal: #00B3A4; --membrane: #9FD8CF; --copper: #B87333; --mist: #EAF4F2;
+}
+
+body.pagina-cosmo { background: var(--inkt); color: var(--marmer); font-family: var(--font-cosmo-tekst); --font-mono: var(--font-cosmo-mono); --font-tekst: var(--font-cosmo-tekst); }
+body.pagina-cosmo ::selection { background: var(--oker); color: var(--inkt); }
+body.pagina-cosmo h1, body.pagina-cosmo h2, body.pagina-cosmo h3 { color: var(--marmer); font-family: var(--font-cosmo); font-weight: 400; letter-spacing: .01em; }
+body.pagina-cosmo h2 { font-size: clamp(1.9rem, 4.2vw, 3rem); }
+body.pagina-cosmo .label { color: var(--oker); font-family: var(--font-cosmo-mono); }
+body.pagina-cosmo .intro { color: var(--marmer-dim); }
+body.pagina-cosmo p { color: var(--marmer-dim); }
+body.pagina-cosmo strong { color: var(--marmer); }
+body.pagina-cosmo section { padding: 6.5rem 0; }
+
+/* Sterrenveld achter alles */
+#sterrenveld { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+body.pagina-cosmo > *:not(#sterrenveld) { position: relative; z-index: 1; }
+
+/* Header op de COSMO pagina */
+body.pagina-cosmo .site-header { background: rgba(21, 19, 15, .78); box-shadow: 0 1px 0 var(--cosmo-lijn); }
+body.pagina-cosmo .site-header.transparant { background: transparent; box-shadow: none; }
+body.pagina-cosmo .wordmark { color: var(--marmer); }
+body.pagina-cosmo .wordmark .bright { color: var(--oker); }
+body.pagina-cosmo .wordmark .dot { color: var(--marmer); }
+body.pagina-cosmo .nav-links a { color: var(--marmer-dim); }
+body.pagina-cosmo .nav-links a.actief { color: var(--marmer); }
+body.pagina-cosmo .nav-links a::after { background: var(--oker); }
+body.pagina-cosmo .nav-cosmo .ster { background: var(--oker); animation-name: ster-puls-oker; }
+@keyframes ster-puls-oker { 0% { box-shadow: 0 0 0 0 rgba(201, 162, 75, .6); } 100% { box-shadow: 0 0 0 9px rgba(201, 162, 75, 0); } }
+body.pagina-cosmo .nav-links a.nav-cta { background: rgba(243, 239, 230, .1); border: 1px solid rgba(243, 239, 230, .3); }
+body.pagina-cosmo .nav-links a.nav-cta:hover { background: var(--oker); color: var(--inkt) !important; }
+body.pagina-cosmo .menu-knop span { background: var(--marmer); }
+body.pagina-cosmo .cursor-gloed { background: radial-gradient(circle, rgba(201, 162, 75, .12), transparent 60%); }
+
+/* Knoppen */
+body.pagina-cosmo .knop-primair { background: var(--terracotta); color: var(--marmer); box-shadow: 0 10px 30px -10px rgba(185, 73, 44, .8); }
+body.pagina-cosmo .knop-primair:hover { background: #D15A3A; }
+body.pagina-cosmo .knop-secundair { border-color: rgba(243, 239, 230, .4); color: var(--marmer); }
+body.pagina-cosmo .knop-secundair:hover { background: rgba(243, 239, 230, .08); }
+
+/* ---------- Hero ---------- */
+
+.cosmo-hero {
+  background: transparent;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(var(--nav-hoogte) + 1rem) 1.5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.cosmo-hero::before {
+  content: ""; position: absolute; left: 50%; top: 38%; width: 80vmin; height: 80vmin;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(201, 162, 75, .12), transparent 60%);
+  pointer-events: none;
+}
+.cosmo-hero .logo-vak { position: relative; width: 100%; max-width: 1100px; height: clamp(240px, 40vh, 420px); }
+body.pagina-cosmo .cosmo-hero #logo-canvas { position: absolute; inset: 0; width: 100%; height: 100%; cursor: pointer; }
+.cosmo-hero .inhoud { position: relative; max-width: 820px; }
+.cosmo-tagline {
+  font-family: var(--font-cosmo-mono); font-size: .8rem; letter-spacing: .3em; text-transform: uppercase; color: var(--oker);
+  margin-top: .4rem; opacity: 0; transition: opacity 1s ease;
+}
+.cosmo-tagline.aan { opacity: 1; }
+.cosmo-hero h1 { font-size: clamp(1.8rem, 3.8vw, 2.8rem); margin-top: 1.6rem; color: var(--marmer); opacity: 0; transform: translateY(14px); transition: opacity 1s, transform 1s; }
+.cosmo-hero h1.aan { opacity: 1; transform: none; }
+.cosmo-hero .onder { opacity: 0; transition: opacity 1s .3s; }
+.cosmo-hero .onder.aan { opacity: 1; }
+.cosmo-hero .onder p { max-width: 620px; margin: 1rem auto 0; font-size: 1.1rem; }
+.cosmo-hero .knoppen { justify-content: center; }
+.opnieuw {
+  position: absolute; right: 1.5rem; bottom: 1.5rem;
+  font: 500 .72rem var(--font-mono); letter-spacing: .14em; text-transform: uppercase;
+  color: var(--marmer-dim); background: transparent; border: 1px solid var(--cosmo-lijn); border-radius: 999px;
+  padding: .5rem .9rem; cursor: pointer; transition: all .3s;
+}
+.opnieuw:hover { color: var(--oker); border-color: var(--oker); }
+.endorsed { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--marmer-dim); margin-top: 2.5rem; }
+.endorsed a { color: var(--oker); text-decoration: none; }
+
+/* ---------- Probleem: verspreide kaarten die uitlijnen ---------- */
+
+.cosmo-kaarten { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem; margin-top: 3rem; }
+.cosmo-kaart {
+  background: rgba(243, 239, 230, .035);
+  border: 1px solid var(--cosmo-lijn);
+  border-radius: 14px;
+  padding: 1.9rem;
+  transition: transform 1.1s cubic-bezier(.22, .8, .3, 1), opacity 1.1s, border-color .4s, background .4s;
+  opacity: 0;
+}
+.cosmo-kaart:nth-child(1) { transform: translate(-30px, 40px) rotate(-6deg); }
+.cosmo-kaart:nth-child(2) { transform: translate(10px, -30px) rotate(4deg); }
+.cosmo-kaart:nth-child(3) { transform: translate(40px, 30px) rotate(-3deg); }
+.cosmo-kaart.zichtbaar { opacity: 1; transform: none; }
+.cosmo-kaart:hover { border-color: rgba(201, 162, 75, .5); background: rgba(243, 239, 230, .06); }
+.cosmo-kaart .nummer { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .16em; color: var(--oker); display: block; margin-bottom: .9rem; }
+.cosmo-kaart h3 { font-size: 1.45rem; margin-bottom: .6rem; }
+.cosmo-kaart p { font-size: .98rem; }
+
+/* ---------- Acroniem ---------- */
+
+.acroniem { display: flex; justify-content: center; gap: clamp(.4rem, 2vw, 1.2rem); margin: 2.5rem 0 1.5rem; flex-wrap: wrap; }
+.letter {
+  font-family: var(--font-cosmo); font-size: clamp(3.4rem, 10vw, 7rem); line-height: 1;
+  width: clamp(3.6rem, 11vw, 7.4rem); aspect-ratio: 1; display: grid; place-items: center;
+  border: 1px solid var(--cosmo-lijn); border-radius: 16px; cursor: pointer;
+  background: rgba(243, 239, 230, .02);
+  transition: all .4s cubic-bezier(.22, .8, .3, 1);
+  color: var(--marmer-dim);
+}
+.letter:hover, .letter.aan { color: var(--inkt); background: var(--oker); border-color: var(--oker); transform: translateY(-6px); box-shadow: 0 20px 40px -16px rgba(201, 162, 75, .6); }
+.letter.aan.terracotta, .letter.terracotta:hover { background: var(--terracotta); border-color: var(--terracotta); color: var(--marmer); }
+.acroniem-uitleg { text-align: center; min-height: 5.5rem; }
+.acroniem-uitleg .woord { font-family: var(--font-cosmo); font-size: clamp(1.6rem, 4vw, 2.4rem); color: var(--marmer); transition: opacity .3s; }
+.acroniem-uitleg .woord em { color: var(--oker); font-style: normal; }
+.acroniem-uitleg p { max-width: 560px; margin: .5rem auto 0; }
+.acroniem-zin { text-align: center; font-family: var(--font-mono); font-size: .78rem; letter-spacing: .24em; text-transform: uppercase; color: var(--oker); margin-top: 1.5rem; }
+
+/* ---------- Sterrenkaart (hoe het werkt) ---------- */
+
+.sterrenkaart { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; align-items: stretch; margin-top: 2.5rem; }
+.kaart-canvas {
+  position: relative; border-radius: 16px; border: 1px solid var(--cosmo-lijn);
+  background: radial-gradient(ellipse at 50% 50%, rgba(201, 162, 75, .06), transparent 60%), rgba(243, 239, 230, .02);
+  min-height: 460px; overflow: hidden;
+}
+.kaart-canvas canvas { position: absolute; inset: 0; width: 100%; height: 100%; cursor: pointer; }
+.kaart-hint { position: absolute; left: 1rem; bottom: .9rem; font-family: var(--font-mono); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--marmer-dim); pointer-events: none; }
+.kaart-paneel {
+  border-radius: 16px; border: 1px solid var(--cosmo-lijn); padding: 2rem;
+  background: rgba(243, 239, 230, .035);
+  display: flex; flex-direction: column; justify-content: center;
+}
+.kaart-paneel .label { margin-bottom: .6rem; }
+.kaart-paneel h3 { font-size: 1.8rem; margin-bottom: .8rem; transition: opacity .3s; }
+.kaart-paneel p { transition: opacity .3s; }
+.kaart-paneel .stap-dots { display: flex; gap: .5rem; margin-top: 1.6rem; }
+.kaart-paneel .stap-dots button { width: 10px; height: 10px; border-radius: 50%; border: 0; background: var(--cosmo-lijn); cursor: pointer; transition: all .3s; padding: 0; }
+.kaart-paneel .stap-dots button.aan { background: var(--oker); transform: scale(1.3); }
+@media (max-width: 860px) { .sterrenkaart { grid-template-columns: 1fr; } .kaart-canvas { min-height: 380px; } }
+
+/* ---------- Zonder / met ---------- */
+
+.schakel { display: inline-flex; align-items: center; gap: 1rem; margin-top: 1.5rem; font-family: var(--font-mono); font-size: .76rem; letter-spacing: .16em; text-transform: uppercase; color: var(--marmer-dim); }
+.schakel .knopje { width: 62px; height: 32px; border-radius: 999px; background: rgba(243, 239, 230, .12); border: 1px solid var(--cosmo-lijn); position: relative; cursor: pointer; transition: background .4s; }
+.schakel .knopje::after { content: ""; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%; background: var(--marmer); transition: transform .4s cubic-bezier(.22, .8, .3, 1), background .4s; }
+.schakel.aan .knopje { background: var(--oker); }
+.schakel.aan .knopje::after { transform: translateX(30px); background: var(--inkt); }
+.schakel .kant { transition: color .3s; }
+.schakel.aan .met, .schakel:not(.aan) .zonder { color: var(--marmer); }
+.vergelijk { margin-top: 2.5rem; display: grid; gap: .8rem; }
+.vergelijk-rij {
+  display: grid; grid-template-columns: 200px 1fr; gap: 1.5rem; align-items: center;
+  padding: 1.2rem 1.5rem; border-radius: 12px; border: 1px solid var(--cosmo-lijn);
+  background: rgba(243, 239, 230, .03); transition: border-color .4s, background .4s;
+}
+.vergelijk-rij .thema { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--oker); }
+.vergelijk-rij .tekst { position: relative; min-height: 1.6em; }
+.vergelijk-rij .tekst span { position: absolute; inset: 0; transition: opacity .45s, transform .45s; }
+.vergelijk-rij .tekst .met { opacity: 0; transform: translateY(8px); color: var(--marmer); }
+.vergelijk.aan .vergelijk-rij .tekst .met { opacity: 1; transform: none; }
+.vergelijk.aan .vergelijk-rij .tekst .zonder { opacity: 0; transform: translateY(-8px); }
+.vergelijk.aan .vergelijk-rij { border-color: rgba(201, 162, 75, .4); background: rgba(201, 162, 75, .06); }
+@media (max-width: 640px) { .vergelijk-rij { grid-template-columns: 1fr; gap: .5rem; } .vergelijk-rij .tekst { min-height: 3.4em; } }
+
+/* ---------- Edities ---------- */
+
+.edities { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; margin-top: 3rem; }
+.editie {
+  position: relative; border-radius: 18px; padding: 2.4rem; overflow: hidden; min-height: 360px;
+  border: 1px solid var(--cosmo-lijn);
+  transition: transform .5s cubic-bezier(.22, .8, .3, 1), box-shadow .5s;
+  display: flex; flex-direction: column; justify-content: flex-end;
+}
+.editie:hover { transform: translateY(-6px); }
+.editie::before { content: ""; position: absolute; inset: 0; opacity: .9; transition: opacity .5s; }
+.editie > * { position: relative; }
+.editie.personal { background: var(--midnight); }
+.editie.personal::before { background: radial-gradient(circle at 80% 15%, rgba(59, 108, 255, .55), transparent 50%), radial-gradient(circle at 20% 90%, rgba(143, 160, 255, .25), transparent 50%); }
+.editie.personal:hover { box-shadow: 0 30px 60px -30px rgba(59, 108, 255, .7); }
+.editie.business { background: var(--deepsea); }
+.editie.business::before { background: radial-gradient(circle at 80% 15%, rgba(0, 179, 164, .5), transparent 50%), radial-gradient(circle at 20% 90%, rgba(184, 115, 51, .35), transparent 50%); }
+.editie.business:hover { box-shadow: 0 30px 60px -30px rgba(0, 179, 164, .7); }
+.editie .c { font-family: var(--font-cosmo); font-size: 1rem; letter-spacing: .3em; text-transform: uppercase; }
+.editie.personal .c { color: var(--stardust); }
+.editie.business .c { color: var(--membrane); }
+.editie h3 { font-size: 2.2rem; margin: .6rem 0 .4rem; }
+.editie.personal h3 { color: var(--paper); }
+.editie.business h3 { color: var(--mist); }
+.editie .tagline { font-family: var(--font-mono); font-size: .74rem; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 1rem; }
+.editie.personal .tagline { color: var(--orbit); }
+.editie.business .tagline { color: var(--flowteal); }
+.editie p { font-size: .98rem; color: rgba(255, 255, 255, .78); }
+.editie .orbit { position: absolute; right: -20%; top: -30%; width: 80%; aspect-ratio: 1; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .12); animation: draai 40s linear infinite; }
+.editie .orbit::after { content: ""; position: absolute; top: 50%; left: -5px; width: 10px; height: 10px; border-radius: 50%; }
+.editie.personal .orbit::after { background: var(--orbit); box-shadow: 0 0 16px var(--orbit); }
+.editie.business .orbit::after { background: var(--copper); box-shadow: 0 0 16px var(--copper); }
+@keyframes draai { to { transform: rotate(360deg); } }
+@media (max-width: 760px) { .edities { grid-template-columns: 1fr; } }
+
+/* ---------- Vertrouwen ---------- */
+
+.pijlers { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.4rem; margin-top: 2.5rem; }
+.pijler { padding: 1.6rem; border-radius: 14px; border: 1px solid var(--cosmo-lijn); background: rgba(243, 239, 230, .03); transition: border-color .4s, transform .4s; }
+.pijler:hover { border-color: rgba(201, 162, 75, .5); transform: translateY(-4px); }
+.pijler .icoon { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: rgba(201, 162, 75, .12); color: var(--oker); margin-bottom: 1rem; }
+.pijler .icoon svg { width: 22px; height: 22px; }
+.pijler h3 { font-size: 1.25rem; font-family: var(--font-kop); font-weight: 700; }
+.pijler p { font-size: .95rem; }
+
+/* ---------- Hoe je het krijgt ---------- */
+
+.status-badge {
+  display: inline-flex; align-items: center; gap: .6rem;
+  padding: .5rem 1rem; border-radius: 999px; border: 1px solid rgba(201, 162, 75, .5);
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--oker);
+  margin-bottom: 1.5rem;
+}
+.status-badge::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--oker); box-shadow: 0 0 0 0 rgba(201, 162, 75, .6); animation: ster-puls-oker 2s ease-out infinite; }
+.route { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 2.5rem; counter-reset: route; }
+.route-stap { position: relative; padding: 1.8rem 1.6rem 1.6rem; border-radius: 14px; border: 1px solid var(--cosmo-lijn); background: rgba(243, 239, 230, .03); }
+.route-stap::before { counter-increment: route; content: "0" counter(route); font-family: var(--font-cosmo); font-size: 2.6rem; color: var(--oker); opacity: .9; display: block; line-height: 1; margin-bottom: .8rem; }
+.route-stap h3 { font-size: 1.3rem; font-family: var(--font-kop); font-weight: 700; }
+.route-stap p { font-size: .95rem; }
+@media (max-width: 760px) { .route { grid-template-columns: 1fr; } }
+
+/* ---------- Afsluiter ---------- */
+
+.cosmo-afsluiter { text-align: center; padding: 7rem 1.5rem; position: relative; overflow: hidden; }
+.cosmo-afsluiter::before { content: ""; position: absolute; left: 50%; bottom: -30%; width: 80vw; max-width: 900px; aspect-ratio: 1; transform: translateX(-50%); background: radial-gradient(circle, rgba(185, 73, 44, .25), transparent 60%); pointer-events: none; }
+.cosmo-afsluiter .container { position: relative; }
+.cosmo-afsluiter h2 { font-size: clamp(2rem, 5vw, 3.4rem); }
+.cosmo-afsluiter p { max-width: 560px; margin: 1rem auto 0; }
+.cosmo-afsluiter .knoppen { justify-content: center; }
+
+/* Footer op COSMO */
+body.pagina-cosmo footer { background: #0D0C09; }
+body.pagina-cosmo footer a:hover { color: var(--oker); }
+
+@media (prefers-reduced-motion: reduce) {
+  .cosmo-tagline, .cosmo-hero h1, .cosmo-hero .onder { opacity: 1; transform: none; }
+  .cosmo-kaart { opacity: 1; transform: none; }
+}

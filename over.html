@@ -4,85 +4,131 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Over — Flowbright</title>
-  <meta name="description" content="Over Flowbright en CKS: bedrijfskundig ingenieur met een achtergrond in de technische maakindustrie.">
+  <meta name="description" content="Flowbright is de consultancypraktijk van een bedrijfskundig ingenieur met een achtergrond in operations en productie in de technische maakindustrie.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700&family=Work+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Gloock&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#14283C">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
+<header class="site-header transparant">
   <nav class="nav">
-    <a class="wordmark" href="index.html"><span class="flow">Flow</span>Bright<span class="dot">.</span></a>
-    <ul>
+    <a class="wordmark" href="index.html"><span class="flow">Flow</span><span class="bright">Bright</span><span class="dot">.</span></a>
+    <button class="menu-knop" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="werkwijze.html">Werkwijze</a></li>
       <li><a href="over.html" class="actief">Over</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cosmo.html" class="nav-cosmo"><span class="ster"></span>COSMO</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-<div class="hero">
+<div class="hero hero-klein">
+  <canvas id="stroomveld" aria-hidden="true"></canvas>
   <div class="container">
-    <span class="label">Over Flowbright</span>
-    <h1>Als het werk weer stroomt, gaat het <span class="licht">licht</span> aan</h1>
-    <p>Flowbright is de consultancypraktijk van CKS, bedrijfskundig ingenieur met een achtergrond in operations en productie in de technische maakindustrie. Vertrouwd op de werkvloer én aan de directietafel.</p>
+    <span class="label verschijn">Over Flowbright</span>
+    <h1 class="woorden">Als het werk weer stroomt, gaat het <span class="licht">licht</span> aan</h1>
+    <p class="verschijn">Flowbright is de consultancypraktijk van CKS, bedrijfskundig ingenieur met een achtergrond in operations en productie in de technische maakindustrie. Vertrouwd op de werkvloer én aan de directietafel.</p>
   </div>
 </div>
 
 <section>
-  <div class="container narrow">
-    <span class="label">Het verhaal</span>
-    <h2>Waarom Flowbright bestaat</h2>
-    <p>Elk groeiend technisch bedrijf loopt er vroeg of laat tegenaan. De processen die vroeger vanzelf gingen, beginnen te knellen. Afdelingen lossen elk hun eigen stukje op, maar tussen die stukken lekt informatie weg. Orders vertragen, fouten herhalen zich, en vergaderingen gaan over symptomen in plaats van oorzaken. Het gevolg zie je niet in het ERP-systeem maar op de werkvloer: goede vakmensen die hun motivatie verliezen, omdat de manier van werken tegen ze vecht.</p>
-    <p>De reflex is vaak een nieuw systeem of een nieuwe tool. Die lost het zelden op. Want het echte probleem is bijna nooit één probleem op één plek. Het zijn meerdere problemen, verspreid over meerdere afdelingen, en niemand in de organisatie heeft het complete beeld.</p>
-    <p>Daar begint Flowbright.</p>
-    <p>Ik ben CKS, bedrijfskundig ingenieur met een achtergrond in de technische maakindustrie. Ik heb van dichtbij gezien hoe bedrijven vastlopen, niet door gebrek aan kennis of inzet, maar doordat het werk niet meer stroomt en niemand de tijd heeft om de hele keten te overzien. Dat overzicht breng ik.</p>
-    <p>Mijn werk begint met luisteren. Op de werkvloer, bij engineering, in de planning, aan de directietafel. Ik zoek waar de flow breekt: waar data verdwijnt, waar processen haperen, waar afdelingen elkaar kwijtraken. Die kluwen vertaal ik naar één helder beeld dat voor iedereen klopt, van monteur tot management. Vervolgens breng ik de juiste mensen aan tafel, met de juiste informatie, en maken we er samen een project van. Met een duidelijk doel, een planning en een einde.</p>
-    <p>Ik geloof in moderne middelen. Waar AI en slimme tooling het verschil maken, zet ik ze in. Maar technologie is nooit het antwoord op zichzelf. Duurzaam resultaat ontstaat waar mensen, processen en technologie samen gaan werken. Daarom lever ik geen rapport op, maar een oplossing die de organisatie zelf heeft helpen bouwen en dus zelf draagt, ook als ik allang weg ben.</p>
-    <p>Want daar draait het uiteindelijk om. Als het werk weer stroomt, gaat het licht aan. Dan komt de energie terug, bij de mensen en in de cijfers.</p>
+  <div class="container">
+    <div class="twee-kolommen">
+      <div class="verhaal">
+        <span class="label" data-reveal>Het verhaal</span>
+        <h2 data-reveal style="--d:1">Waarom Flowbright bestaat</h2>
+        <p class="eerste" data-reveal style="--d:2">Elk groeiend technisch bedrijf loopt er vroeg of laat tegenaan. De processen die vroeger vanzelf gingen, beginnen te knellen. Afdelingen lossen elk hun eigen stukje op, maar tussen die stukken lekt informatie weg. Orders vertragen, fouten herhalen zich, en vergaderingen gaan over symptomen in plaats van oorzaken. Het gevolg zie je niet in het ERP-systeem maar op de werkvloer: goede vakmensen die hun motivatie verliezen, omdat de manier van werken tegen ze vecht.</p>
+        <p data-reveal>De reflex is vaak een nieuw systeem of een nieuwe tool. Die lost het zelden op. Want het echte probleem is bijna nooit één probleem op één plek. Het zijn meerdere problemen, verspreid over meerdere afdelingen, en niemand in de organisatie heeft het complete beeld.</p>
+        <p data-reveal><strong>Daar begint Flowbright.</strong></p>
+        <p data-reveal>Ik ben CKS, bedrijfskundig ingenieur met een achtergrond in de technische maakindustrie. Ik heb van dichtbij gezien hoe bedrijven vastlopen, niet door gebrek aan kennis of inzet, maar doordat het werk niet meer stroomt en niemand de tijd heeft om de hele keten te overzien. Dat overzicht breng ik.</p>
+        <p data-reveal>Mijn werk begint met luisteren. Op de werkvloer, bij engineering, in de planning, aan de directietafel. Ik zoek waar de flow breekt: waar data verdwijnt, waar processen haperen, waar afdelingen elkaar kwijtraken. Die kluwen vertaal ik naar één helder beeld dat voor iedereen klopt, van monteur tot management. Vervolgens breng ik de juiste mensen aan tafel, met de juiste informatie, en maken we er samen een project van. Met een duidelijk doel, een planning en een einde.</p>
+        <p data-reveal>Ik geloof in moderne middelen. Waar AI en slimme tooling het verschil maken, zet ik ze in. Maar technologie is nooit het antwoord op zichzelf. Duurzaam resultaat ontstaat waar mensen, processen en technologie samen gaan werken. Daarom lever ik geen rapport op, maar een oplossing die de organisatie zelf heeft helpen bouwen en dus zelf draagt, ook als ik allang weg ben.</p>
+        <p data-reveal>Want daar draait het uiteindelijk om. Als het werk weer stroomt, gaat het licht aan. Dan komt de energie terug, bij de mensen en in de cijfers.</p>
+      </div>
+      <div>
+        <div class="plakkend">
+          <div class="citaat-kaart" data-reveal>
+            Flowbright. Bringing the (b)right people together.
+            <span class="bron">Slotregel van het merkverhaal</span>
+          </div>
+          <div class="kaarten" style="margin-top:1.5rem; grid-template-columns:1fr">
+            <div class="kaart" data-reveal style="--d:1">
+              <span class="nummer">Achtergrond</span>
+              <h3>Van werkvloer tot directietafel</h3>
+              <p>Technische Bedrijfskunde, jaren in operations en productie bij een machinebouwer. Planning, inkoop, magazijn, kwaliteit en digitalisering: de hele keten van dichtbij gezien.</p>
+            </div>
+            <div class="kaart" data-reveal style="--d:2">
+              <span class="nummer">Overtuiging</span>
+              <h3>Mensen × processen × technologie</h3>
+              <p>Niet AI als belofte, maar als middel. De sleutel zit in de samenwerking tussen die drie, en in een oplossing die de organisatie zelf draagt.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<div class="kernbelofte">
+<section style="background:var(--wit)">
   <div class="container">
-    <blockquote>"Flowbright. Bringing the (b)right people together."</blockquote>
-    <p class="bron">Slotregel van het merkverhaal</p>
-  </div>
-</div>
-
-<section>
-  <div class="container twee-kolommen">
-    <div>
-      <span class="label">De naam</span>
-      <h2>Eerst de flow, dan het licht</h2>
+    <div class="sectie-kop">
+      <span class="label" data-reveal>De naam</span>
+      <h2 data-reveal style="--d:1">Eerst de flow, dan het licht</h2>
+      <p class="intro" data-reveal style="--d:2">De volgorde in het woord vertelt letterlijk de klantreis. Beweeg over de naam.</p>
     </div>
-    <div>
-      <p><strong>Flow</strong> is het proces, de doorstroming, het werk dat weer gaat lopen. Het ambacht en het middel. <strong>Bright</strong> is de mensen, de helderheid, de energie. Het resultaat.</p>
-      <p>De volgorde in het woord vertelt letterlijk de klantreis: eerst de flow terugbrengen, dan gaat het licht aan. Oorzaak en gevolg in één woord.</p>
+    <div class="naam-speler" data-reveal>
+      <div class="naam-groot"><span class="flow">Flow</span><span class="bright">Bright</span><span class="dot">.</span></div>
+      <div class="naam-uitleg">
+        <div id="uitleg-flow">
+          <span class="label">Flow · het middel</span>
+          <p>Het proces, de doorstroming, het werk dat weer gaat lopen. Het ambacht. Eerst brengen we de flow terug.</p>
+        </div>
+        <div id="uitleg-bright">
+          <span class="label">Bright · het resultaat</span>
+          <p>De mensen, de helderheid, de energie. Als het werk stroomt, gaat het licht aan. Oorzaak en gevolg in één woord.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <div class="afsluiter">
   <div class="container">
-    <h2>Kennismaken?</h2>
-    <p>Vertel waar het knelt in uw organisatie. Luisteren is altijd de eerste stap.</p>
-    <div class="knoppen">
-      <a class="knop knop-primair" href="contact.html">Neem contact op</a>
+    <h2 data-reveal>Kennismaken?</h2>
+    <p data-reveal style="--d:1">Vertel waar het knelt in uw organisatie. Luisteren is altijd de eerste stap.</p>
+    <div class="knoppen" data-reveal style="--d:2">
+      <a class="knop knop-primair" href="contact.html">Neem contact op <span class="pijl">→</span></a>
     </div>
   </div>
 </div>
 
-<footer>
+<footer class="op-donker">
   <div class="container">
-    <a class="wordmark" href="index.html"><span class="flow">Flow</span>Bright<span class="dot">.</span></a>
-    <span class="tagline">Bringing the (b)right people together.</span>
-    <span>Flowbright · proces- en projectbegeleiding · <a href="contact.html">flowbright.nl</a></span>
+    <div>
+      <a class="wordmark" href="index.html"><span class="flow">Flow</span><span class="bright">Bright</span><span class="dot">.</span></a>
+      <span class="tagline">Bringing the (b)right people together.</span>
+    </div>
+    <div>
+      <h4>Navigatie</h4>
+      <ul><li><a href="werkwijze.html">Werkwijze</a></li><li><a href="over.html">Over Flowbright</a></li><li><a href="cosmo.html">COSMO</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul><li><a href="mailto:info@flowbright.nl">info@flowbright.nl</a></li><li>Regio Noord-Holland, heel Nederland</li></ul>
+    </div>
+    <div class="onder"><span>Flowbright · proces- en projectbegeleiding · flowbright.nl</span><span>COSMO is een product van Flowbright</span></div>
   </div>
 </footer>
 
+<script src="main.js"></script>
 </body>
 </html>
